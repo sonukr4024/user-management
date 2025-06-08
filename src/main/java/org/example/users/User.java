@@ -21,6 +21,7 @@ public class User {
     private String name;
     private String product;
     private String defaultLanguage;
+    private String role;
     private long createdAt = System.currentTimeMillis();
 
     public Long getId() {
@@ -89,5 +90,13 @@ public class User {
 
     public void setCreatedAt(long createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

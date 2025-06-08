@@ -11,16 +11,15 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
-import static javax.crypto.Cipher.SECRET_KEY;
-
 @Component
 
 public class JwtUtil {
     private final Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
-    public String generateToken(String mobile) {
+    public String generateToken(String mobile, String role) {
         return Jwts.builder()
                 .setSubject(mobile)
+                .claim("role", role)
                 .setIssuedAt(new Date())
                 .setExpiration(Date.from(Instant.now().plus(1, ChronoUnit.HOURS)))
                 .signWith(key, SignatureAlgorithm.HS256)
