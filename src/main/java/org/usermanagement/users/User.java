@@ -1,4 +1,4 @@
-package org.example.users;
+package org.usermanagement.users;
 
 import jakarta.persistence.*;
 

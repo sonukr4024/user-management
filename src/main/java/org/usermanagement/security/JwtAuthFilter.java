@@ -1,4 +1,4 @@
-package org.example.security;
+package org.usermanagement.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

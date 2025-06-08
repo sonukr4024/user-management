@@ -1,4 +1,4 @@
-package org.example.security;
+package org.usermanagement.security;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

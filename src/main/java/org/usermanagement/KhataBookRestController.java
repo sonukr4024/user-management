@@ -1,8 +1,8 @@
-package org.example;
+package org.usermanagement;
 
-import org.example.security.JwtUtil;
-import org.example.users.User;
-import org.example.users.UserRepository;
+import org.usermanagement.security.JwtUtil;
+import org.usermanagement.users.User;
+import org.usermanagement.users.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

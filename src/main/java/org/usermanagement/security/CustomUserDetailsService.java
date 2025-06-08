@@ -1,7 +1,7 @@
-package org.example.security;
+package org.usermanagement.security;
 
-import org.example.users.User;
-import org.example.users.UserRepository;
+import org.usermanagement.users.User;
+import org.usermanagement.users.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.security.core.userdetails.UserDetails;
