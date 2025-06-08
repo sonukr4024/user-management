@@ -2,6 +2,7 @@ package org.usermanagement.security;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -14,7 +15,7 @@ import java.util.Date;
 @Component
 
 public class JwtUtil {
-    private final Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+    private final String key = "dGhpcy1pcy1teS1zdXBlci1zZWNyZXQta2V5LXdpdGgtc29tZS1leHRyYS1zZWN1cml0eQ==";
 
     public String generateToken(String mobile, String role) {
         return Jwts.builder()
@@ -22,7 +23,7 @@ public class JwtUtil {
                 .claim("role", role)
                 .setIssuedAt(new Date())
                 .setExpiration(Date.from(Instant.now().plus(1, ChronoUnit.HOURS)))
-                .signWith(key, SignatureAlgorithm.HS256)
+                .signWith(Keys.hmacShaKeyFor(Decoders.BASE64.decode(key)), SignatureAlgorithm.HS256)
                 .compact();
     }
 

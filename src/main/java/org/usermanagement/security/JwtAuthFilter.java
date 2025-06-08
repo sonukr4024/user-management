@@ -38,7 +38,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             try {
                 username = jwtUtil.extractMobile(jwt);
             } catch (Exception e) {
-                // invalid token
+                System.out.println("invalid token" + e.getMessage());
             }
         }
 
